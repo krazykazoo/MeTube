@@ -27,7 +27,7 @@ if(isset($_POST['submit'])) {
 }
 
 ?>
-<form action="register.php" method="post">
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 	Email Address: <input type="text" name="email" required> <br>
 	Username: <input type="text" name="username" required> <br>
 	Create Password: <input  type="password" name="passowrd1" required> <br>

@@ -14,7 +14,7 @@
 <body>
 <?php
 if(isset($_GET['id'])) {
-	$query = "SELECT * FROM media WHERE mediaid='".$_GET['id']."'";
+	$query = "SELECT * FROM Media WHERE media_id='".$_GET['id']."'";
 	$result = mysql_query( $query );
 	$result_row = mysql_fetch_row($result);
 	
