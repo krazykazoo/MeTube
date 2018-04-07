@@ -39,10 +39,10 @@ function user_pass_check($username, $password)
 	}
 	else{
 		$row = mysql_fetch_row($result);
-		if(password_verify($password, $row["password"]))
-			return 0; //checked
+		if(password_verify($password, $row[0]))
+			return 2; //wrong password
 		else 
-			return 2; //wrong password.
+			return 0; //Checked.
 	}	
 }
 
