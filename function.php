@@ -29,7 +29,7 @@ function user_exist_check ($username, $password){
 function user_pass_check($username, $password)
 {
 	
-	$query = "select * from account where username='$username'";
+	$query = "SELECT password FROM Account WHERE username='$username'";
 	echo  $query;
 	$result = mysql_query( $query );
 		
@@ -39,10 +39,10 @@ function user_pass_check($username, $password)
 	}
 	else{
 		$row = mysql_fetch_row($result);
-		if(strcmp($row[1],$password))
-			return 2; //wrong password
+		if(password_verify($password, $row["password"]))
+			return 0; //checked
 		else 
-			return 0; //Checked.
+			return 2; //wrong password.
 	}	
 }
 
