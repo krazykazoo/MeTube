@@ -39,7 +39,8 @@ function user_pass_check($username, $password)
 	}
 	else{
 		$row = mysql_fetch_row($result);
-		if(password_verify($password, $row[0]))
+		echo $row;
+		if(password_verify($password, $row[1]))
 			return 2; //wrong password
 		else 
 			return 0; //Checked.
