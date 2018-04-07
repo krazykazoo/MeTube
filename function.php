@@ -2,8 +2,8 @@
 include "mysqlClass.inc.php";
 
 
-function user_exist_check ($username, $password){
-	$query = "select * from account where username='$username'";
+function user_exist_check ($username, $password, $email){
+	$query = "SELECT * FROM Account WHERE username='$username'";
 	$result = mysql_query( $query );
 	if (!$result){
 		die ("user_exist_check() failed. Could not query the database: <br />". mysql_error());
@@ -11,7 +11,8 @@ function user_exist_check ($username, $password){
 	else {
 		$row = mysql_fetch_assoc($result);
 		if($row == 0){
-			$query = "insert into account values ('$username','$password')";
+			$hash = password_hash($password)
+			$query = "INSERT INTO Account VALUES ('1','$username','$hash', '$email')";
 			echo "insert query:" . $query;
 			$insert = mysql_query( $query );
 			if($insert)

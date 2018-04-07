@@ -11,9 +11,9 @@ if(isset($_POST['submit'])) {
 		$register_error = "Passwords don't match. Try again?";
 	}
 	else {
-		$check = user_exist_check($_POST['username'], $_POST['passowrd1']);	
+		$check = user_exist_check($_POST['username'], $_POST['passowrd1'], $_POST['email']);	
 		if($check == 1){
-			//echo "Rigister succeeds";
+			//echo "Register succeeds";
 			$_SESSION['username']=$_POST['username'];
 			header('Location: browse.php');
 		}
@@ -25,6 +25,7 @@ if(isset($_POST['submit'])) {
 
 ?>
 <form action="register.php" method="post">
+	Email Address: <input type="text" name="email"> <br>
 	Username: <input type="text" name="username"> <br>
 	Create Password: <input  type="password" name="passowrd1"> <br>
 	Repeat password: <input type="password" name="passowrd2"> <br>
