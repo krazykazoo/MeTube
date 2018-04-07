@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
 	ini_set('session.save_path', '~/sessions');
+	ini_set('session.gc_probability', 1);
 	session_start();
 	include_once "function.php";
 ?>	
