@@ -1,7 +1,7 @@
 <html>
 <body>
 <?php
-session_save_path('/home/example.com/sessions');
+session_save_path('/public_html/MeTube/sessions/');
 ini_set('session.gc_probability', 1);
 echo "<h1> Welcome to Metube! </h1>";
 ?>
