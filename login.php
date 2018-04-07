@@ -23,19 +23,18 @@ if(isset($_POST['submit'])) {
 		}
 }
 
-
  
 ?>
-	<form method="post" action="<?php echo "login.php"; ?>">
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
 	<table width="100%">
 		<tr>
 			<td  width="20%">Username:</td>
-			<td width="80%"><input class="text"  type="text" name="username"><br /></td>
+			<td width="80%"><input class="text"  type="text" name="user_name"><br /></td>
 		</tr>
 		<tr>
 			<td  width="20%">Password:</td>
-			<td width="80%"><input class="text"  type="password" name="password"><br /></td>
+			<td width="80%"><input class="text"  type="password" name="pass_word"><br /></td>
 		</tr>
 		<tr>
         
