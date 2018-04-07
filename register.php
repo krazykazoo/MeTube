@@ -2,6 +2,8 @@
 <body>
 
 <?php
+ini_set('session.save_path', '~/sessions/');
+
 session_start();
 
 include_once "function.php";
