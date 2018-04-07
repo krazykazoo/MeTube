@@ -81,26 +81,6 @@ function upload_error($result)
 }
 
 function connect()
-{
-	$serverName = "mysql1.cs.clemson.edu";
-	$serverUsername = "MeTube_pvs0";
-	$serverPassword = "Zb8^b~Z\\";
-	$databaseName = "MeTube_ypnq";
-	$username = $_POST['user_name'];
-	$password = $_POST['pass_word'];
-	$conn = mysqli_connect($serverName, $serverUsername, $serverPassword, $databaseName) or die("Connection failed:(" . mysql_error($conn));
-	$sql = "SELECT pass_hash FROM User WHERE username = '" . $username . "'";
-	$queryResult = $conn->query($sql);
-	if ($queryResult->num_rows > 0) {
-	while ($row = $queryResult->fetch_assoc()) {
-		$hash = $row["pass_hash"];
-		$auth = password_verify($password, $hash);
-		if ($auth) $result["result"] = TRUE;
-	}
-	} else {
-		$result["error"] = $queryResult;
-	}
-	return $conn;
-}
+{}
 	
 ?>
