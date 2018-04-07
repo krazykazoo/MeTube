@@ -10,6 +10,9 @@ if(isset($_POST['submit'])) {
 	if( $_POST['passowrd1'] != $_POST['passowrd2']) {
 		$register_error = "Passwords don't match. Try again?";
 	}
+	else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+		$register_error = "Invalid email address!";
+	}
 	else {
 		$check = user_exist_check($_POST['username'], $_POST['passowrd1'], $_POST['email']);	
 		if($check == 1){
@@ -25,10 +28,10 @@ if(isset($_POST['submit'])) {
 
 ?>
 <form action="register.php" method="post">
-	Email Address: <input type="text" name="email"> <br>
-	Username: <input type="text" name="username"> <br>
-	Create Password: <input  type="password" name="passowrd1"> <br>
-	Repeat password: <input type="password" name="passowrd2"> <br>
+	Email Address: <input type="text" name="email" required> <br>
+	Username: <input type="text" name="username" required> <br>
+	Create Password: <input  type="password" name="passowrd1" required> <br>
+	Repeat password: <input type="password" name="passowrd2" required> <br>
 	<input name="submit" type="submit" value="Submit">
 </form>
 
