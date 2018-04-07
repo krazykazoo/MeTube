@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <?php
-ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
+
 session_start();
 
 include_once "function.php";
