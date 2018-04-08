@@ -18,13 +18,13 @@
 if(isset($_GET['id'])) {
 	$query = "SELECT * FROM Media WHERE media_id='".$_GET['id']."'";
 	$result = mysql_query( $query );
-	$result_row = mysql_fetch_row($result);
+	$result_row = mysql_fetch_assoc($result);
 	
 	//updateMediaTime($_GET['id']);
 	
-	$filename=$result_row[0];   ////0, 4, 2
-	$filepath=$result_row[4]; 
-	$type=$result_row[2];
+	$filename=$result_row['name'];   ////0, 4, 2
+	$filepath=$result_row['path']; 
+	$type=$result_row['type'];
 	if(substr($type,0,5)=="image") //view image
 	{
 		echo "Viewing Picture:";
