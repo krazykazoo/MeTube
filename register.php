@@ -3,10 +3,6 @@
 
 <?php
 include_once 'header.php';
-
-
-session_start();
-
 include_once "function.php";
 
 if(isset($_POST['submit'])) {
