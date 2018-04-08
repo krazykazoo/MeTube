@@ -1,6 +1,6 @@
 <?php
-ini_set('session.gc_probability', 1);
-ini_set('session.save_path', '/home/kpascia/sessions');
+include_once 'header.php';
+
 
 session_start();
 include_once "function.php";
