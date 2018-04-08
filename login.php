@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <?php
-
+session_start();
 
 include_once "function.php";
 if(isset($_POST['submit'])) {
