@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <?php
-include_once 'header.php';
+//include_once 'header.php';
 
 
 include_once "function.php";
