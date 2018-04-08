@@ -39,7 +39,7 @@ function saveDownload(id)
 <br/><br/>
 <?php
 
-	$query = "SELECT * from media"; 
+	$query = "SELECT * from Media"; 
 	$result = mysql_query( $query );
 	if (!$result){
 	   die ("Could not query the media table in the database: <br />". mysql_error());
