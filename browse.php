@@ -25,7 +25,7 @@ function saveDownload(id)
 </head>
 
 <body>
-<p>Welcome <?php echo $_SESSION['username'];?></p>
+<p>Welcome <?php if (isset($_SESSION['username'])) echo $_SESSION['username'];?></p>
 <?php if (isset($_SESSION['username'])) echo "<a href='media_upload.php'  style='color:#FF9900;'>Upload File</a>"; ?>
 <div id='upload_result'>
 <?php 
