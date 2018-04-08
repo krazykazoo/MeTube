@@ -28,14 +28,16 @@ if(isset($_GET['id'])) {
 	if(substr($type,0,5)=="image") //view image
 	{
 		echo "Viewing Picture:";
-		echo $result_row[4];
+		echo $result_row['name'];
 		echo "<img src='".$filepath."'/>";
 	}
 	else //view movie
-	{	
+	{
+		echo "Viewing Video: " . $result_row['name'];
 ?>
 <video width="320" height="240" controls>
   <source src="<?php echo $filepath?>" type="video/mp4">
+  <source src="<?php echo $filepath?>" type="video/ogg">
 Your browser does not support the video tag.
 </video>           
 <?php
