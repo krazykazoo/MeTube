@@ -52,7 +52,7 @@ function saveDownload(id)
 			while ($result_row = mysql_fetch_row($result)) //filename, username, type, mediaid, path
 			{ 
 				$mediaid = $result_row[3];
-				$filename = $result_row[0];
+				$filename = $result_row[1];
 				$filenpath = $result_row[4];
 		?>
         	 <tr valign="top">			
