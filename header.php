@@ -10,7 +10,7 @@ function logout() {
 }
 
 if (isset($_SESSION['username'])) {
-	echo '<button type="button" action="<?php logout(); ?>" value="Logout">';
+	echo '<button type="button" action="<?php logout(); ?>" value="Logout"></button>';
 }
 
 
