@@ -2,7 +2,7 @@
 <body>
 
 <?php
-ini_set('session.save_path', '~/sessions');
+ini_set('session.save_path', '/home/kpascia/sessions');
 ini_set('session.gc_probability', 1);
 
 session_start();
