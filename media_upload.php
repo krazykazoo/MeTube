@@ -14,12 +14,16 @@ include_once 'header.php';
  
     <table width="100%">
         <tr>
-            <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-            <span>Add a Media: <em> (Each file limit 10M)</em> </span>
-            <input  name="file" type="file" size="50" required/>
+            <td>
+                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                <span>Add a Media: <em> (Each file limit 10M)</em> </span>
+            </td>
+            <td>
+                <input  name="file" type="file" size="50" required/>
+            </td>
   		</tr>
   		<tr>
-			<td  width="20%">Title:</td>
+			<td width="20%">Title:</td>
 			<td width="80%"><input type="text" name="title" required><br /></td>
   		</tr>
 		<tr>
