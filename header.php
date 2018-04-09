@@ -50,6 +50,11 @@ if (isset($_SESSION['username'])) {
 	<li><a href="http://github.com">Friends</a></li>
 	<li><a href="http://github.com">Login</a></li>
 	<li><a href="http://github.com">Log Out</a></li>
+	<li>
+		<form method="post" action="search.php">
+			<input type="text" value="search" onclick="value=''" name="search">
+			<input type="submit">
+		</form>
   </ul>
 </div>
 </body>
