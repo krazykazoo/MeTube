@@ -31,12 +31,14 @@ include_once 'header.php';
 		</tr>
 		<tr>
 			<td  width="20%">Category:</td>
-			<select name="category" required>
-                <option value="entertainment">Entertainment</option>
-                <option value="kids">For Children</option>
-                <option value="educational">Educational</option>
-                <option value="other">Other</option>
-            </select>
+			<td>
+			    <select name="category" required>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="kids">For Children</option>
+                    <option value="educational">Educational</option>
+                    <option value="other">Other</option>
+                </select>
+            </td>
 		</tr>
 		<tr>
 	        <td>
