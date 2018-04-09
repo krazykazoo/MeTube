@@ -1,14 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
 
-ini_set('session.save_path', '/home/kpascia/sessions');
+ini_set('session.save_path', getcwd().'/sessions');
 ini_set('session.gc_probability', 1);
 session_start();
-
-if (isset($_SESSION['username'])) {
-	echo '<form method = "post" action = "logout.php"> <input type="submit" value="Logout"> </form>';
-}
-
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
