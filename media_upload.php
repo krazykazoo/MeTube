@@ -30,6 +30,15 @@ include_once 'header.php';
 			<td width="80%"><input type="text" name="tags" required><br /></td>
 		</tr>
 		<tr>
+			<td  width="20%">Category:</td>
+			<select name="category" required>
+                <option value="entertainment">Entertainment</option>
+                <option value="kids">For Children</option>
+                <option value="educational">Educational</option>
+                <option value="other">Other</option>
+            </select>
+		</tr>
+		<tr>
 	        <td>
 	            <input value="Upload" name="submit" type="submit">
 	        </td>
