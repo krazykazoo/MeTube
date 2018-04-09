@@ -15,7 +15,7 @@
 	<br/><br/>
 	<?php
 		$search = $_POST['search'];
-		$query = "SELECT * from Media WHERE title LIKE %'$search'%"; 
+		$query = "SELECT * from Media WHERE title LIKE %$search%"; 
 		$result = mysql_query( $query );
 		if (!$result) {
 		   die ("Could not query the media table in the database: <br />". mysql_error());
