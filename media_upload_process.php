@@ -55,7 +55,7 @@ if(!file_exists($dirfile))
 					foreach ($tagArray as $value) {
 						$value = trim($value);
 						$addTag = "INSERT INTO Tags (media_fk, tag) VALUES ('$mediaid', '$value')";
-						$queryresult = mysql_query($insert)
+						$queryresult = mysql_query($addTag)
 							or die("Insert into Tags error in media_upload_process.php " .mysql_error());
 					}
 					$result="0";
