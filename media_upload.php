@@ -11,7 +11,6 @@ include_once 'header.php';
 <body>
 
 <form method="post" action="media_upload_process.php" enctype="multipart/form-data" >
- 
     <table width="100%">
         <tr>
             <td>
@@ -19,7 +18,7 @@ include_once 'header.php';
                 <span>Add a Media: <em> (Each file limit 10M)</em> </span>
             </td>
             <td>
-                <input  name="file" type="file" size="50" required/>
+                <input  name="file" type="file" size="50" required>
             </td>
   		</tr>
   		<tr>
@@ -31,7 +30,7 @@ include_once 'header.php';
 			<td width="80%"><input type="text" name="tags" required><br /></td>
 		</tr>
 		<tr>
-	        <input value="Upload" name="submit" type="submit" />
+	        <input value="Upload" name="submit" type="submit">
  		</tr>
 	</table>
                 
