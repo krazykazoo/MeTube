@@ -1,6 +1,7 @@
 <html>
 <body>
 <?php
+include_once 'header.php';
 echo "<h1> Welcome to Metube! </h1>";
 ?>
 
