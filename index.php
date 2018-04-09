@@ -1,8 +1,8 @@
 <html>
 <body>
 <?php
-	include_once 'browse.php';
-	echo "<h1> Welcome to Metube! </h1>";
+	echo "<h1> Group MeTube Project for 4620!  
+	Spring 2018 </h1>";
 ?>
 
 </body>
