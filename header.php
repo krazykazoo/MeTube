@@ -45,11 +45,12 @@ if (isset($_SESSION['username'])) {
 <body>
 <div id="navbar">
   <ul>
-	<li><a href="http://github.com">Home</a></li>
-	<li><a href="http://github.com">Browse</a></li>
+	<li><a href="index.php">Home</a></li>
+	<li><a href="browse.php">Browse</a></li>
 	<li><a href="http://github.com">Friends</a></li>
-	<li><a href="http://github.com">Login</a></li>
-	<li><a href="http://github.com">Log Out</a></li>
+	<?php if (isset($_SESSION['username'])) echo "<li><a href='logout.php'>Log Out</a></li>"
+	           else echo "<li><a href='login.php'>Login</a></li>"
+	?>
 	<li>
 		<form method="post" action="search.php">
 			<input type="text" value="search" onclick="value=''" name="search">
