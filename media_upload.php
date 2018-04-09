@@ -43,7 +43,7 @@ include_once 'header.php';
 		<tr>
 		    <td  width="20%">Description:</td>
 		    <td>
-		        <input type="textarea" name="descrition" required>
+		        <input type="textarea" name="description" required>
 		    </td>
 		</tr>
 		<tr>
