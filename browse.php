@@ -57,7 +57,7 @@ function saveDownload(id)
 		?>
         	 <tr valign="top">			
 			<td>
-					<?php 
+					<?php
 						echo $user;  //mediaid
 					?>
 			</td>
@@ -68,7 +68,7 @@ function saveDownload(id)
             	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
                         </td>
 		</tr>
-        	<?php
+        <?php
 			}
 		?>
 	</table>

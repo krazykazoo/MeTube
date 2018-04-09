@@ -2,6 +2,7 @@
 
 	<?php
 		include_once 'header.php';
+		include_once 'function.php';
 	?>	
 	
 	<div id='upload_result'>
