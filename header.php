@@ -44,7 +44,7 @@ session_start();
 	<li><a href="browse.php">Browse</a></li>
 	<li><a href="http://github.com">Friends</a></li>
 	<?php if (isset($_SESSION['username'])) echo "<li><a href='logout.php'>Log Out</a></li>";
-	           else echo "<li><a href='login.php'>Login</a></li><li><a href='register.php'></li>";
+	           else echo "<li><a href='login.php'>Login</a></li><li><a href='register.php'>Register</li>";
 	?>
 	<li>
 		<form method="post" action="search.php">
