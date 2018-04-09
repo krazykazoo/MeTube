@@ -48,8 +48,8 @@ if (isset($_SESSION['username'])) {
 	<li><a href="index.php">Home</a></li>
 	<li><a href="browse.php">Browse</a></li>
 	<li><a href="http://github.com">Friends</a></li>
-	<?php if (isset($_SESSION['username'])) echo "<li><a href='logout.php'>Log Out</a></li>"
-	           else echo "<li><a href='login.php'>Login</a></li>"
+	<?php if (isset($_SESSION['username'])) echo "<li><a href='logout.php'>Log Out</a></li>";
+	           else echo "<li><a href='login.php'>Login</a></li>";
 	?>
 	<li>
 		<form method="post" action="search.php">
