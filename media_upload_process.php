@@ -51,13 +51,13 @@ if(!file_exists($dirfile))
 						or die("Select media_id error in media_upload_process.php " .mysql_error());
 					$row = mysql_fetch_assoc($queryresult);
 					$mediaid = $row['media_id'];
-					$tagArray = explode(',', $_POST['tags'])
-						foreach ($tagArray as $value) {
-							$value = trim($value);
-							$addTag = "INSERT INTO Tags (media_fk, tag) VALUES ('$mediaid', '$value')"
-							$queryresult = mysql_query($insert)
-						  		or die("Insert into Tags error in media_upload_process.php " .mysql_error());
-						}
+					$tagArray = explode(',', $_POST['tags']);
+					foreach ($tagArray as $value) {
+						$value = trim($value);
+						$addTag = "INSERT INTO Tags (media_fk, tag) VALUES ('$mediaid', '$value')"
+						$queryresult = mysql_query($insert)
+							or die("Insert into Tags error in media_upload_process.php " .mysql_error());
+					}
 					$result="0";
 				}
 			}
