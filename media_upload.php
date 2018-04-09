@@ -15,7 +15,7 @@ include_once 'header.php';
     <table width="100%">
         <tr>
             <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-            Add a Media: <label style="color:#663399"><em> (Each file limit 10M)</em></label><br/>
+            <span>Add a Media: <em> (Each file limit 10M)</em> </span>
             <input  name="file" type="file" size="50" required/>
   		</tr>
   		<tr>
