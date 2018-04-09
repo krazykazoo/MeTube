@@ -41,6 +41,12 @@ include_once 'header.php';
             </td>
 		</tr>
 		<tr>
+		    <td  width="20%">Description:</td>
+		    <td>
+		        <input type="textarea" name="descrition" required>
+		    </td>
+		</tr>
+		<tr>
 	        <td>
 	            <input value="Upload" name="submit" type="submit">
 	        </td>
