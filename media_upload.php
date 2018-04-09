@@ -30,10 +30,11 @@ include_once 'header.php';
 			<td width="80%"><input type="text" name="tags" required><br /></td>
 		</tr>
 		<tr>
-	        <input value="Upload" name="submit" type="submit">
+	        <td>
+	            <input value="Upload" name="submit" type="submit">
+	        </td>
  		</tr>
-	</table>
-                
+	</table>             
  </form>
 
 </body>
