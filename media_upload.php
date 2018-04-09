@@ -26,7 +26,7 @@ include_once 'header.php';
 			<td width="80%"><input type="text" name="title" required><br /></td>
   		</tr>
 		<tr>
-			<td  width="20%">Tags:</td>
+			<td  width="20%">Tags: <em>(separate by comma)</em></td>
 			<td width="80%"><input type="text" name="tags" required><br /></td>
 		</tr>
 		<tr>

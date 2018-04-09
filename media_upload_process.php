@@ -38,13 +38,27 @@ if(!file_exists($dirfile))
 				else /*Successfully upload file*/
 				{
 					//insert into media table
-					
-					$insert = "INSERT INTO Media (name, username, type, path, )".
-							  "values ('". urlencode($_FILES["file"]["name"])."','$username','".$_FILES["file"]["type"]."', '$upfile')";
+					$title = $_POST['title'];
+					$description = $_POST['description'];
+					$category = $_POST['category'];
+					$insert = "INSERT INTO Media (name, username, type, path, title, description, category)".
+							  "values ('". urlencode($_FILES["file"]["name"])."','$username','".$_FILES["file"]["type"]."', '$upfile', '$title', '$description', '$category')";
 					$queryresult = mysql_query($insert)
 						  or die("Insert into Media error in media_upload_process.php " .mysql_error());
-					$result="0";
 					chmod($upfile, 0644);
+					$idSQL = "SELECT media_id FROM Media WHERE path ='$upfile'";
+					$queryresult = mysql_query($idSQL) 
+						or die("Select media_id error in media_upload_process.php " .mysql_error());
+					$row = mysql_fetch_assoc($queryresult);
+					$mediaid = $row['media_id'];
+					$tagArray = explode(',', $_POST['tags'])
+						foreach ($tagArray as $value) {
+							$value = trim($value);
+							$addTag = "INSERT INTO Tags (media_fk, tag) VALUES ('$mediaid', '$value')"
+							$queryresult = mysql_query($insert)
+						  		or die("Insert into Tags error in media_upload_process.php " .mysql_error());
+						}
+					$result="0";
 				}
 			}
 			else  
