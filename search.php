@@ -49,7 +49,7 @@
 					$filenpath = $result_row['path'];
 					$user = $result_row['username'];
 					$title = $result_row['title'];
-					$views = ['views'];
+					$views = $result_row['views'];
 			?>
 	        <tr valign="top">			
 				<td>
