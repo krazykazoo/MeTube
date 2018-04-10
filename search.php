@@ -18,11 +18,22 @@
 		$query = "SELECT media_id from Media WHERE title LIKE '%$search%'"; 
 		$titleSearch = mysql_query( $query );
 		$query = "SELECT media_fk FROM Tags WHERE tag Like '%$search%'";
-		$allIds = array_merge($titleSearch, mysql_query($query));
+		$allids = array();
+		while($row = mysqli_fetch_array($titleSearch)){
+   			$allids[] = $row;
+		}
+		$tagSearch = mysql_query($query);
+		while($row = mysqli_fetch_array($tagSearch)){
+   			$allids[] = $row;
+		}
 		$result = array();
-		foreach ($allIds as $id) {
+		foreach ($allids as $id) {
 			$query = "SELECT * FROM Media WHERE media_id = '$id'";
-			$result = array_merge($result, mysql_query($query));
+			$rows = array();
+			$result = mysql_query($query);
+			while($row = mysqli_fetch_array($result)) {
+    			$rows[] = $row;
+			}
 		}
 		if (!$result) {
 		   die ("Could not query the media table in the database: <br />". mysql_error());
