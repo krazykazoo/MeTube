@@ -64,7 +64,7 @@
 	           		<a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
 				</td>
 				<td>
-	           		<span><em>Views: <?php echo $views ?> </em></span>
+	           		<span><em>Views: <?php echo $views; ?> </em></span>
 				</td>
 			</tr>
 	        <?php
