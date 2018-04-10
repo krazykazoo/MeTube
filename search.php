@@ -15,8 +15,15 @@
 	<br/><br/>
 	<?php
 		$search = $_POST['search'];
-		$query = "SELECT * from Media WHERE title LIKE '%$search%'"; 
-		$result = mysql_query( $query );
+		$query = "SELECT media_id from Media WHERE title LIKE '%$search%'"; 
+		$titleSearch = mysql_query( $query );
+		$query = "SELECT media_fk FROM Tags WHERE tag Like '%$search%'";
+		$allIds = array_merge($titleSearch, mysql_query($query));
+		$result = array();
+		foreach ($allIds as $id) {
+			$query = "SELECT * FROM Media WHERE media_id = '$id'";
+			$result = array_merge($result, mysql_query($query));
+		}
 		if (!$result) {
 		   die ("Could not query the media table in the database: <br />". mysql_error());
 		}
