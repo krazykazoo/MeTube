@@ -20,11 +20,11 @@
 		$query = "SELECT media_fk FROM Tags WHERE tag Like '%$search%'";
 		$allids = array();
 		while($row = mysql_fetch_assoc($titleSearch)){
-   			array_push($allids, row['media_id']);
+   			array_push($allids, $row['media_id']);
 		}
 		$tagSearch = mysql_query($query);
 		while($row = mysql_fetch_assoc($tagSearch)){
-   			array_push($allids, row['media_fk']);
+   			array_push($allids, $row['media_fk']);
 		}
 		$result = array();
 		$query = "SELECT * FROM Media WHERE media_id IN ('0'";
