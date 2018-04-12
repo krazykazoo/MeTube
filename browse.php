@@ -65,7 +65,7 @@ function saveDownload(id)
 	}
 ?>
     
-    <div style="background:#339900;color:#FFFFFF; width:150px;"><?php if (isset($_GET['category']) echo "Browse $_GET['category'] videos:"; else echo "Uploaded Media";?></div>
+    <div style="background:#339900;color:#FFFFFF; width:150px;"><?php if (isset($_GET['category'])) {echo "Browse $_GET['category'] videos:";} else {echo "Uploaded Media";}?></div>
 	<table width="50%" cellpadding="0" cellspacing="0">
 		<?php
 			while ($result_row = mysql_fetch_assoc($result)) //filename, username, type, mediaid, path
