@@ -49,7 +49,7 @@ function saveDownload(id)
 		} else if ($_GET['category'] === 'educational') {
 			$query = "SELECT * FROM Media WHERE category = 'educational'";
 		} else {
-			$query = "SELECT * FROM Media WHERE category = 'other'"
+			$query = "SELECT * FROM Media WHERE category = 'other'";
 		}
 		$result = mysql_query( $query );
 		if (!$result){
