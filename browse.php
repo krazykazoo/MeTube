@@ -78,6 +78,7 @@ function saveDownload(id)
 				$filenpath = $result_row['path'];
 				$user = $result_row['username'];
 				$title = $result_row['title'];
+				$views = $result_row['title'];
 
 		?>
         	 <tr valign="top">			
@@ -86,12 +87,15 @@ function saveDownload(id)
 						echo $user;  //mediaid
 					?>
 			</td>
-                        <td>
-            	            <a href="media.php?id=<?php echo $mediaid;?>"><?php echo $title;?></a> 
-                        </td>
-                        <td>
-            	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
-                        </td>
+            <td>
+	            <a href="media.php?id=<?php echo $mediaid;?>"><?php echo $title;?></a> 
+            </td>
+            <td>
+	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+            </td>
+            <td>
+   				<span><em>Views: <?php echo $views; ?> </em></span>
+			</td>
 		</tr>
         <?php
 			}
