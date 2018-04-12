@@ -24,6 +24,11 @@ function saveDownload(id)
 </head>
 
 <body>
+<a href="browse.php?category=entertainment"> Entertainment</a><br />
+<a href="browse.php?category=kids"> Kids</a><br />
+<a href="browse.php?category=educational"> Educational</a><br />
+<a href="browse.php?category=Other"> Other </a><br />
+
 <p>Welcome <?php if (isset($_SESSION['username'])) echo $_SESSION['username'];?></p>
 <?php if (isset($_SESSION['username'])) echo "<a href='media_upload.php'  style='color:#FF9900;'>Upload File</a>"; ?>
 <div id='upload_result'>
@@ -36,15 +41,31 @@ function saveDownload(id)
 </div>
 <br/><br/>
 <?php
-
-	$query = "SELECT * from Media"; 
-	$result = mysql_query( $query );
-	if (!$result){
-	   die ("Could not query the media table in the database: <br />". mysql_error());
+	if (isset($_GET['category'])) {
+		if ($_GET['category'] === 'entertainment') {
+			$query = "SELECT * FROM Media WHERE category = 'entertainment'";
+		} else if ($_GET['category'] === 'kids') {
+			$query = "SELECT * FROM Media WHERE category = 'kids'";
+		} else if ($_GET['category'] === 'educational') {
+			$query = "SELECT * FROM Media WHERE category = 'educational'";
+		} else {
+			$query = "SELECT * FROM Media WHERE category = 'other'"
+		}
+		$result = mysql_query( $query );
+		if (!$result){
+	   		die ("Could not query the media table in the database: <br />". mysql_error());
+		}
+	}
+	else {
+		$query = "SELECT * from Media"; 
+		$result = mysql_query( $query );
+		if (!$result){
+	   		die ("Could not query the media table in the database: <br />". mysql_error());
+		}
 	}
 ?>
     
-    <div style="background:#339900;color:#FFFFFF; width:150px;">Uploaded Media</div>
+    <div style="background:#339900;color:#FFFFFF; width:150px;"><?php if (isset($_GET['category']) echo "Browse $_GET['category'] videos:"; else echo "Uploaded Media";?></div>
 	<table width="50%" cellpadding="0" cellspacing="0">
 		<?php
 			while ($result_row = mysql_fetch_assoc($result)) //filename, username, type, mediaid, path
