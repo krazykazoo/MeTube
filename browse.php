@@ -78,7 +78,7 @@ function saveDownload(id)
 				$filenpath = $result_row['path'];
 				$user = $result_row['username'];
 				$title = $result_row['title'];
-				$views = $result_row['title'];
+				$views = $result_row['views'];
 
 		?>
         	 <tr valign="top">			
