@@ -15,8 +15,9 @@ include_once 'header.php';
 <body>
 <?php
 if(isset($_GET['id'])) {
-	$query = "UPDATE Media SET views = views + 1 WHERE media_id = '".$_get['id']."'";
+	$query = "UPDATE Media SET views = views + 1 WHERE media_id = '".$_GET['id']."'";
 	mysql_query($query);
+	
 	$query = "SELECT * FROM Media WHERE media_id='".$_GET['id']."'";
 	$result = mysql_query( $query );
 	$result_row = mysql_fetch_assoc($result);

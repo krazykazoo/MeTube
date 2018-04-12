@@ -24,10 +24,13 @@ function saveDownload(id)
 </head>
 
 <body>
-<a href="browse.php?category=entertainment"> Entertainment</a><br />
-<a href="browse.php?category=kids"> Kids</a><br />
-<a href="browse.php?category=educational"> Educational</a><br />
-<a href="browse.php?category=Other"> Other </a><br />
+<div id="categories">
+	<span> Browse by Category: </span><br />
+	<a href="browse.php?category=entertainment"> Entertainment</a><br />
+	<a href="browse.php?category=kids"> Kids</a><br />
+	<a href="browse.php?category=educational"> Educational</a><br />
+	<a href="browse.php?category=Other"> Other </a><br />
+</div>
 
 <p>Welcome <?php if (isset($_SESSION['username'])) echo $_SESSION['username'];?></p>
 <?php if (isset($_SESSION['username'])) echo "<a href='media_upload.php'  style='color:#FF9900;'>Upload File</a>"; ?>
