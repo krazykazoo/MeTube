@@ -1,15 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<table>
-	<tr>
-		<td>
-			<form method="post" action="message.php">
-				<span>To user: </span><input type="text" name="recipient" required>
-				<span>Message: </span><input type="text" name="message" required>
-				<input type="submit" value="Send">Send</button>
-			</form>
-		</td>
-	</tr>
-</table>
 
 <?php 
 
@@ -41,11 +30,7 @@ if (isset($_POST['submit'])) {
 		else {
 			echo "this user doesnt exist.";
 		}
-	}
-	
-	
-	
-	
+	}	
 }
 
 
@@ -53,3 +38,17 @@ if (isset($_POST['submit'])) {
 
 
 ?>
+
+
+
+<table>
+	<tr>
+		<td>
+			<form method="post" action="message.php">
+				<span>To user: </span><input type="text" name="recipient" required>
+				<span>Message: </span><input type="text" name="message" required>
+				<input type="submit" value="Send">Send</button>
+			</form>
+		</td>
+	</tr>
+</table>
