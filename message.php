@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 		$recipient = $_POST['recipient'];
 		$message = $_POST['message'];
 		
-		$result = mysql_query("SELECT account_id FROM Account WHERE username = '$recipient')";
+		$result = mysql_query("SELECT account_id FROM Account WHERE username = '$recipient'");
 		if (mysql_num_rows($result) > 0) {
 			$to_fk = mysql_fetch_assoc($result);
 			$query = "INSERT INTO Message (to_fk, from, content) VALUES ('$to_fk', '". $_SESSON['username']. "', '$message')";
