@@ -6,10 +6,9 @@ include_once 'header.php';
 echo "Messages";
 
 
-if (isset($_POST['submit'])) {
 	if (!isset($_POST['recipient']) ||
 		!isset($_POST['message'])) {
-		echo "Argument error.";
+		//echo "Argument error.";
 	}
 	else {
 		$recipient = $_POST['recipient'];
@@ -32,7 +31,7 @@ if (isset($_POST['submit'])) {
 			echo "this user doesnt exist.";
 		}
 	}	
-}
+
 
 
 
