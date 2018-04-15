@@ -74,7 +74,7 @@ else
 <table>
 	<tr>
 		<td>
-			<form method="post" action="comment.php">
+			<form method="post" action="function.php">
 				<span>Message: </span><input type="text" name="message" required>
 				<input type="submit" value="Send"></button>
 			</form>
