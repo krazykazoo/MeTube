@@ -30,8 +30,9 @@ if(isset($_GET['id'])) {
 	$media_id = $result_row['media_id'];
 	if(substr($type,0,5)=="image") //view image
 	{
-		echo "Viewing Picture:";
-		echo $result_row['name'];
+		echo "Viewing Picture: ";
+		echo $result_row['title'];
+		echo "<br />";
 		echo "<img src='".$filepath."'/>";
 	}
 	else //view movie
