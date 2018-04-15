@@ -51,8 +51,8 @@
 				echo "<script type='text/javascript'>alert('Message Failed to Send!');</script>";
 			}
 			unset($_POST['recipient']);
-			unset($_POST['message'];
-			header('message.php');
+			unset($_POST['message']);
+			header('Location: message.php');
 		}	
 	}
 ?>
