@@ -6,10 +6,10 @@
 	include_once 'function.php';
 	echo "<p>My Messages</p>";
 	?>
-	<table>
+	<table style="width:100%">
 		<tr>
-			<td> From </td>
-			<td> Message </td>
+			<tdstyle="width:20%"> From </td>
+			<tdstyle="width:80%"> Message </td>
 		</tr>
 		<?php 
 			$getUserId = "SELECT * FROM Account WHERE username = '". $_SESSION['username'] . "'";
@@ -21,7 +21,7 @@
 			while ($row = mysql_fetch_assoc($messagesResult)) {
 				$sender = $row['sender'];
 				$content = $row['content'];
-				echo "<tr> <td> $sender </td> <td> $content </td> </tr>";
+				echo "<tr> <td style='width:20%'> $sender </td> <td style=width:80%'> $content </td> </tr>";
 			}
 			
 		
