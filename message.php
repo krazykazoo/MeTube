@@ -2,25 +2,26 @@
 
 <?php 
 
-include_once 'header.php';
-include_once 'function.php';
-echo "Messages";
+	include_once 'header.php';
+	include_once 'function.php';
+	echo "Messages";
 
 
 	if (!isset($_POST['recipient']) ||
 		!isset($_POST['message'])) {
-		//echo "Argument error.";
+		echo "Argument error.";
 	}
 	else {
 		$recipient = $_POST['recipient'];
 		$message = $_POST['message'];
 		
-		$result = mysql_query("SELECT account_id FROM Account WHERE username = '$recipient'");
+		$accountCheck = "SELECT account_id FROM Account WHERE username = '$recipient'";
+		$recipient = mysql_query($accountCheck);
 		echo "Result: ".$result;
-		if (mysql_num_rows($result) > 0) {
-			$to_fk = mysql_fetch_assoc($result);
+		if (mysql_num_rows($recipient) > 0) {
+			$to_fk = mysql_fetch_assoc($recipient);
 			echo $to_fk;
-			$username = $_SESSON['username'];
+			$username = $_SESSION['username'];
 			$query = "INSERT INTO Message (to_fk, from, content) VALUES ('$to_fk', '$username', '$message')";
 			$insertResult = mysql_query($query);
 			if (mysql_num_rows($insertResult) > 0) {
@@ -34,11 +35,6 @@ echo "Messages";
 			echo "this user doesnt exist.";
 		}
 	}	
-
-
-
-
-
 
 ?>
 
