@@ -71,7 +71,7 @@ else
 <?php
 }
 ?>
-<p> Send A Message </p>
+<p> Post Comment </p>
 <table>
 	<tr>
 		<td>
