@@ -41,8 +41,13 @@
   <ul>
 	<li><a href="index.php">Home</a></li>
 	<li><a href="browse.php">Browse</a></li>
-	<?php if (isset($_SESSION['username'])) echo "<li><a href='message.php'>Messages</a></li><li><a href='logout.php'>Log Out</a></li>";
-	           else echo "<li><a href='login.php'>Login</a></li><li><a href='register.php'>Register</a></li>";
+	<?php if (isset($_SESSION['username'])) {
+			echo "<li><a href='message.php'>Messages</a></li>";
+			echo "<li><a href='playlist.php'>My Playlist</a></li>";
+			echo "<li><a href='logout.php'>Log Out</a></li>";
+			
+		}
+	    else echo "<li><a href='login.php'>Login</a></li><li><a href='register.php'>Register</a></li>";
 	?>
 	<li>
 		<form method="post" action="search.php">
