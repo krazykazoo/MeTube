@@ -8,8 +8,8 @@
 	?>
 	<table style="width:100%">
 		<tr>
-			<tdstyle="width:20%"> From </td>
-			<tdstyle="width:80%"> Message </td>
+			<td style="width:20%"> From </td>
+			<td style="width:80%"> Message </td>
 		</tr>
 		<?php 
 			$getUserId = "SELECT * FROM Account WHERE username = '". $_SESSION['username'] . "'";
