@@ -20,21 +20,21 @@
 		echo "Result: ".$recipientResult;
 		if (!$recipientResult) {
 			echo "user not found";
-	}
-	else {
-		$to_fk = mysql_fetch_assoc($recipientResult);
-		echo $to_fk;
-		$username = $_SESSION['username'];
-		$query = "INSERT INTO Message (to_fk, from, content) VALUES ('$to_fk', '$username', '$message')";
-		$insertResult = mysql_query($query);
-		if (mysql_num_rows($insertResult) > 0) {
-			echo "message sent";
 		}
 		else {
-			echo "send error";
-		}
-	}	
-
+			$to_fk = mysql_fetch_assoc($recipientResult);
+			echo $to_fk;
+			$username = $_SESSION['username'];
+			$query = "INSERT INTO Message (to_fk, from, content) VALUES ('$to_fk', '$username', '$message')";
+			$insertResult = mysql_query($query);
+			if (mysql_num_rows($insertResult) > 0) {
+				echo "message sent";
+			}
+			else {
+				echo "send error";
+			}
+		}	
+	}
 ?>
 
 
@@ -50,3 +50,6 @@
 		</td>
 	</tr>
 </table>
+
+
+</html>
