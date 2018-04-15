@@ -50,19 +50,22 @@
 			else {
 				echo "<script type='text/javascript'>alert('Message Failed to Send!');</script>";
 			}
+			unset($_POST['recipient']);
+			unset($_POST['message'];
+			header('message.php');
 		}	
 	}
 ?>
 
 
-
+<p> Send A Message </p>
 <table>
 	<tr>
 		<td>
 			<form method="post" action="message.php">
 				<span>To user: </span><input type="text" name="recipient" required>
 				<span>Message: </span><input type="text" name="message" required>
-				<input type="submit" value="Send">Send</button>
+				<input type="submit" value="Send"></button>
 			</form>
 		</td>
 	</tr>
