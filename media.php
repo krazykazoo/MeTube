@@ -74,7 +74,8 @@ else
 <table>
 	<tr>
 		<td>
-			<form method="post" action="function.php">
+			<form method="post" action="comment.php">
+				<input type="hidden" name="media_id" value="<?php echo $media_id;?>">
 				<span>Message: </span><input type="text" name="message" required>
 				<input type="submit" value="Send"></button>
 			</form>
