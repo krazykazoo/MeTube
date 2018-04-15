@@ -3,6 +3,7 @@
 <?php 
 
 include_once 'header.php';
+include_once 'funciton.php';
 echo "Messages";
 
 
