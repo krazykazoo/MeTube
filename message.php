@@ -18,22 +18,19 @@
 		$accountCheck = "SELECT account_id FROM Account WHERE username = '$recipient'";
 		$recipientResult = mysql_query($accountCheck);
 		if (!$recipientResult) {
-			echo "user not found";
+			echo "<script type='text/javascript'>alert('Sorry there is no user named: $recipient');</script>";
 		}
 		else {
 			$row = mysql_fetch_assoc($recipientResult);
 			$to_fk = $row['account_id'];
-			echo $to_fk;
 			$username = $_SESSION['username'];
-			echo $username;
-			echo $message;
 			$query = "INSERT INTO Message (to_fk, sender, content) VALUES ('$to_fk', '$username', '$message')";
 			$insertResult = mysql_query($query);
 			if ($insertResult) {
-				echo "alert(success);";
+				echo "<script type='text/javascript'>alert('Message Sent!');</script>";
 			}
 			else {
-				echo "send error";
+				echo "<script type='text/javascript'>alert('Message Failed to Send!');</script>";
 			}
 		}	
 	}
