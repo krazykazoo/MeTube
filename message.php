@@ -28,7 +28,7 @@
 		?>
 	</table>
 	<?php
-	if (isset($_POST['recipient']) ||
+	if (isset($_POST['recipient']) &&
 		isset($_POST['message'])){
 		$recipient = $_POST['recipient'];
 		$message = $_POST['message'];
