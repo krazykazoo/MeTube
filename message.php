@@ -16,23 +16,22 @@
 		$message = $_POST['message'];
 		
 		$accountCheck = "SELECT account_id FROM Account WHERE username = '$recipient'";
-		$recipient = mysql_query($accountCheck);
-		echo "Result: ".$result;
-		if (mysql_num_rows($recipient) > 0) {
-			$to_fk = mysql_fetch_assoc($recipient);
-			echo $to_fk;
-			$username = $_SESSION['username'];
-			$query = "INSERT INTO Message (to_fk, from, content) VALUES ('$to_fk', '$username', '$message')";
-			$insertResult = mysql_query($query);
-			if (mysql_num_rows($insertResult) > 0) {
-				echo "message sent";
-			}
-			else {
-				echo "send error";
-			}
+		$recipientResult = mysql_query($accountCheck);
+		echo "Result: ".$recipientResult;
+		if (!$recipientResult) {
+			echo "user not found";
+	}
+	else {
+		$to_fk = mysql_fetch_assoc($recipientResult);
+		echo $to_fk;
+		$username = $_SESSION['username'];
+		$query = "INSERT INTO Message (to_fk, from, content) VALUES ('$to_fk', '$username', '$message')";
+		$insertResult = mysql_query($query);
+		if (mysql_num_rows($insertResult) > 0) {
+			echo "message sent";
 		}
 		else {
-			echo "this user doesnt exist.";
+			echo "send error";
 		}
 	}	
 
