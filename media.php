@@ -55,7 +55,7 @@ Your browser does not support the video tag.
 	$getComments = "SELECT * FROM Comment WHERE media_fk = '$media_id'";
 	$commentResult = mysql_query($getComments);
 	
-	while ($row = mysql_fetch_row($commentResult)) {
+	while ($row = mysql_fetch_assoc($commentResult)) {
 		$user = $row['username'];
 		$content = $row['content'];
 		echo "<tr> <td style='width:20%'> $user </td> <td style=width:80%'> $content </td> </tr>";
