@@ -30,7 +30,7 @@
 			$query = "INSERT INTO Message (to_fk, sender, content) VALUES ('$to_fk', '$username', '$message')";
 			$insertResult = mysql_query($query);
 			if ($insertResult) {
-				echo "message sent";
+				echo "alert(success);";
 			}
 			else {
 				echo "send error";
