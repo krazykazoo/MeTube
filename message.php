@@ -17,13 +17,12 @@
 		
 		$accountCheck = "SELECT account_id FROM Account WHERE username = '$recipient'";
 		$recipientResult = mysql_query($accountCheck);
-		echo "Result: ".$recipientResult;
 		if (!$recipientResult) {
 			echo "user not found";
 		}
 		else {
-			$to_fk = mysql_fetch_assoc($recipientResult);
-			echo $to_fk;
+			$row = mysql_fetch_assoc($recipientResult);
+			$to_fk = $row['account_id'];
 			$username = $_SESSION['username'];
 			$query = "INSERT INTO Message (to_fk, from, content) VALUES ('$to_fk', '$username', '$message')";
 			$insertResult = mysql_query($query);
