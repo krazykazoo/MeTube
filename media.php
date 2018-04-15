@@ -36,7 +36,7 @@ if(isset($_GET['id'])) {
 	}
 	else //view movie
 	{
-		echo "Viewing Video: " . $result_row['name'];
+		echo "Viewing Video: " . $result_row['title'];
 ?>
 <br />
 <video width="320" height="240" controls>
@@ -52,7 +52,7 @@ Your browser does not support the video tag.
 		</tr>          
 <?php
 	}
-	$getComments = "SELECT * FROM Comment WHERE media_fk = '$media_id";
+	$getComments = "SELECT * FROM Comment WHERE media_fk = '$media_id'";
 	$commentResult = mysql_query($getComments);
 	
 	while ($row = mysql_fetch_row($commentResult)) {
