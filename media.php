@@ -38,11 +38,13 @@ if(isset($_GET['id'])) {
 	{
 		echo "Viewing Video: " . $result_row['name'];
 ?>
+<br />
 <video width="320" height="240" controls>
   <source src="<?php echo $filepath?>" type="video/mp4">
   <source src="<?php echo $filepath?>" type="video/ogg">
 Your browser does not support the video tag.
 </video> 
+<br />
 	<table style="width:100%">
 		<tr>
 			<td style="width:20%"> User </td>
