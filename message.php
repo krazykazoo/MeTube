@@ -16,7 +16,7 @@
 			$userResult = mysql_query($getUserId);
 			$row = mysql_fetch_assoc($userResult);
 			$user = $row['account_id'];
-			$getMessages = "SELECT * FROM Messages WHERE to_fk = $user"
+			$getMessages = "SELECT * FROM Messages WHERE to_fk = $user";
 			$messagesResult = mysql_query($getMessages);
 			while ($row = mysql_fetch_assoc($messagesResult)) {
 				$sender = $row['sender'];
