@@ -12,13 +12,13 @@
 			<td> Message </td>
 		</tr>
 		<?php 
-			$getUserId = "SELECT account_id FROM Account WHERE username = '". $_SESSION['username'] . "'";
+			$getUserId = "SELECT * FROM Account WHERE username = '". $_SESSION['username'] . "'";
 			$userResult = mysql_query($getUserId);
 			$row = mysql_fetch_assoc($userResult);
 			$user = $row['account_id'];
 			$getMessages = "SELECT * FROM Messages WHERE to_fk = $user";
 			$messagesResult = mysql_query($getMessages);
-			while ($row = mysql_fetch_assoc($messagesResult)) {
+			while ($row = mysql_fetch_row($messagesResult)) {
 				$sender = $row['sender'];
 				$content = $row['content'];
 				echo "<tr> <td> $sender </td> <td> $content </td> </tr>";
