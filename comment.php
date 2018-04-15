@@ -1,4 +1,5 @@
 <?php 
+	include_once 'header.php'
 	include_once 'function.php';
 	if (isset($_POST['message']) &&
 		isset($_POST['media_id'])) {
