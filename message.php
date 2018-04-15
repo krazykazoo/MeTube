@@ -27,7 +27,7 @@
 			$username = $_SESSION['username'];
 			$query = "INSERT INTO Message (to_fk, from, content) VALUES ('$to_fk', '$username', '$message')";
 			$insertResult = mysql_query($query);
-			if (mysql_num_rows($insertResult) > 0) {
+			if ($insertResult) {
 				echo "message sent";
 			}
 			else {
