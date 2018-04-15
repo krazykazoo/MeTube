@@ -27,6 +27,7 @@
 		
 		?>
 	</table>
+	<?php
 	if (!isset($_POST['recipient']) ||
 		!isset($_POST['message'])) {
 		echo "Argument error.";
