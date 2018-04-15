@@ -70,5 +70,16 @@ else
 <?php
 }
 ?>
+<p> Send A Message </p>
+<table>
+	<tr>
+		<td>
+			<form method="post" action="comment.php">
+				<span>Message: </span><input type="text" name="message" required>
+				<input type="submit" value="Send"></button>
+			</form>
+		</td>
+	</tr>
+</table>
 </body>
 </html>
