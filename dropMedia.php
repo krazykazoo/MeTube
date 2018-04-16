@@ -3,7 +3,7 @@
 	include_once 'function.php';
 	if (isset($_GET['playlist_name']) &&
 		isset($_GET['id'])) {
-		$name = $_GET['playlist_name'];
+		$playlist_name = $_GET['playlist_name'];
 		$media_id = $_GET['id'];
 		$getUserId = "SELECT * FROM Account WHERE username = '".$_SESSION['username']."'";
 		$userResult = mysql_query($getUserId);
