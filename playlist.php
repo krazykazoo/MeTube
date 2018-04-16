@@ -8,7 +8,7 @@
 		$userResult = mysql_query($getUserId);
 		$row = mysql_fetch_assoc($userResult);
 		$userId = $row['account_id'];
-		$query = "SELECT * FROM Playlist WHERE user_fk = '$userId' ORDER BY id DESC LIMIT 1";
+		$query = "SELECT * FROM Playlist WHERE user_fk = '$userId' ORDER BY id LIMIT 1";
 		$result = mysql_query($query);
 		if (mysql_num_rows($result) > 0) {
 			$row = mysql_fetch_assoc($result);
