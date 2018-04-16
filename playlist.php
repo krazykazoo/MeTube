@@ -65,7 +65,7 @@ Your browser does not support the video tag.
 	}
 	else {?>
 <a href="playlist.php">Beginning</a>
-<?php }
+<?php } ?>
 	<table style="width:100%">
 		<tr>
 			<td style="width:20%"> User </td>
