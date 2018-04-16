@@ -55,12 +55,24 @@
 Your browser does not support the video tag.
 </video> 
 <br />
+
+
 <?php } ?>
+ 
+ <?php if ($next_media != 0) { ?>
+<a href="playlist.php?id=<?php echo $next_media;?>">Next</a>
+<?php 
+	}
+	else {?>
+<a href="playlist.php">Beginning</a>
+<?php }
 	<table style="width:100%">
 		<tr>
 			<td style="width:20%"> User </td>
 			<td style="width:80%"> Comment </td>
-		</tr>          
+		</tr>
+		
+		          
 <?php
 	$getComments = "SELECT * FROM Comment WHERE media_fk = '$media_id'";
 	$commentResult = mysql_query($getComments);
@@ -71,6 +83,9 @@ Your browser does not support the video tag.
 		echo "<tr> <td style='width:20%'> $user </td> <td style=width:80%'> $content </td> </tr>";
 	}
 ?>
+
+
+
 <p> Post Comment </p>
 <table>
 	<tr>
@@ -83,15 +98,6 @@ Your browser does not support the video tag.
 		</td>
 	</tr>
 </table>
-<?php if ($next_media != 0) { ?>
-<a href="playlist.php?id=<?php echo $next_media;?>">Next</a>
-<?php 
-	}
-	else {?>
-<a href="playlist.php">Beginning</a>
-<?php }
-	 
-} ?>
-
+<?php } ?>
 
 </html>
