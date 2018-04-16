@@ -12,7 +12,7 @@
 		$result = mysql_query($query);
 		if (mysql_num_rows($result) > 0) {
 			$row = mysql_fetch_assoc($result);
-			$media_id = $row['media_id'];
+			$media_id = $row['media_fk'];
 			$next_media = $row['next_media_fk'];
 		}
 	}
