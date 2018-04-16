@@ -72,7 +72,7 @@ Your browser does not support the video tag.
 			<td style="width:20%"> User </td>
 			<td style="width:80%"> Comment </td>
 		</tr>
-	<a href="dropMedia.php?id=$media_id&name=$playlist_name">Remove</a>
+	<a href="dropMedia.php?id=$media_id&playlist_name=$playlist_name">Remove</a>
 		          
 <?php
 	$getComments = "SELECT * FROM Comment WHERE media_fk = '$media_id'";
