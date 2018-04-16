@@ -44,6 +44,7 @@
 	<?php if (isset($_SESSION['username'])) {
 			echo "<li><a href='message.php'>Messages</a></li>";
 			echo "<li><a href='playlist.php'>My Playlist</a></li>";
+			echo "<li><a href='contacts.php'>My Contacts</a></li>";
 			echo "<li><a href='logout.php'>Log Out</a></li>";
 			
 		}
