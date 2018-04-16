@@ -16,12 +16,12 @@
 		$result = mysql_query($query);
 		if (mysql_num_rows($result) > 0) {
 			while ($row = mysql_fetch_assoc($result)) {
-				$user_fk = $row['user_fk'];
-				$getUserId = "SELECT * FROM Account WHERE account_id = '$user_fk'";
+				$contact_fk = $row['contact_fk'];
+				$getUserId = "SELECT * FROM Account WHERE account_id = '$contact_fk'";
 				$userResult = mysql_query($getUserId);
 				$row = mysql_fetch_assoc($userResult);
 				$username = $row['username'];
-				echo "<tr><td>$username</td><td><a href='channel.php?id=$user_fk'>Link</a></td></tr>";
+				echo "<tr><td>$username</td><td><a href='channel.php?id=$contact_fk'>Link</a></td></tr>";
 			}
 		}
 		

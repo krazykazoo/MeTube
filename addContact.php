@@ -11,7 +11,7 @@
 		$contactResult = mysql_query($getContactId);
 		$row = mysql_fetch_assoc($contactResult);
 		$contactId = $row['account_id'];
-		$query = "INSERT INTO Contact (user_fk, contact_fk) VALUES ('$userId', '$conatctId')";
+		$query = "INSERT INTO Contact (user_fk, contact_fk) VALUES ('$userId', '$contactId')";
 		$result = mysql_query($query);
 		if ($result) {
 			header("Location: contacts.php");	
