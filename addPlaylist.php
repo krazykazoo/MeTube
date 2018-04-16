@@ -14,10 +14,9 @@
 		if (mysql_num_rows($result) > 0) {
 			$row = mysql_fetch_assoc($result);
 			$last_media = $row['media_id'];
-			$query = "UPDATE Playlist SET next_media_fk = '$media_id' WHERE playlist_name = '$name' AND user_id = '$userId' AND media_fk = '$last_media'";
-			mysql_query($query);
+			$query = "UPDATE Playlist SET next_media_fk = '$media_id' WHERE playlist_name = '$name' AND user_fk = '$userId' AND media_fk = '$last_media'";
+			$result = mysql_query($query);
 		}
-		
 		$query = "INSERT INTO Playlist (playlist_name, user_fk, media_fk) VALUES ('$name', '$userId', '$media_id')";
 		$result = mysql_query($query);
 		if ($result) {
