@@ -2,7 +2,7 @@
 	include_once 'header.php';
 	include_once 'function.php';
 	if (isset($_POST['user'])) {
-		$user = $_POST['message'];
+		$user = $_POST['user'];
 		$getUserId = "SELECT * FROM Account WHERE username = '".$_SESSION['username']."'";
 		$userResult = mysql_query($getUserId);
 		$row = mysql_fetch_assoc($userResult);
