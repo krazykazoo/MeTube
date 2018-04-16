@@ -21,7 +21,7 @@
 				$userResult = mysql_query($getUserId);
 				$row = mysql_fetch_assoc($userResult);
 				$username = $row['username'];
-				echo "<tr><td>$username</td><td><a href='channel.php?id=$user_fk'>Link</a></td></tr>"
+				echo "<tr><td>$username</td><td><a href='channel.php?id=$user_fk'>Link</a></td></tr>";
 			}
 		}
 		
