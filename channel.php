@@ -32,11 +32,11 @@ function saveDownload(id)
 	else {
 		$username = $_SESSION['username'];
 		$query = "SELECT * from Media WHERE username = '$username'"; 
+	}
 		$result = mysql_query( $query );
 		if (!$result){
 	   		die ("Could not query the media table in the database: <br />". mysql_error());
 		}
-	}
 ?>
     
     <div> <?php if (isset($_GET['category'])) {echo "Browse " . $_GET['category'] . " videos:";} else {echo "Uploaded Media";}?> </div>
