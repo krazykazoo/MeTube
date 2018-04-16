@@ -26,7 +26,7 @@
 		$query = "INSERT INTO Playlist (playlist_name, user_fk, media_fk) VALUES ('$name', '$userId', '$media_id')";
 		$result = mysql_query($query);
 		if ($result) {
-			//header("Location: media.php?id=$media_id");	
+			header("Location: media.php?id=$media_id");	
 		}
 	}
 	else {

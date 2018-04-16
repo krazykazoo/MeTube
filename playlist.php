@@ -85,8 +85,13 @@ Your browser does not support the video tag.
 </table>
 <?php if ($next_media != 0) { ?>
 <a href="playlist.php?id=<?php echo $next_media;?>">Next</a>
-<?php } ?>
-<?php } ?>
+<?php 
+	}
+	else {?>
+<a href="playlist.php">Beginning</a>
+<?php }
+	} 
+} ?>
 
 
 </html>
