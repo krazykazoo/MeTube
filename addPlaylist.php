@@ -13,7 +13,7 @@
 		$result = mysql_query($query);
 		if (mysql_num_rows($result) > 0) {
 			$row = mysql_fetch_assoc($result);
-			$last_media = $row['media_id'];
+			$last_media = $row['media_fk'];
 			$query = "UPDATE Playlist SET next_media_fk = '$media_id' WHERE playlist_name = '$name' AND user_fk = '$userId' AND media_fk = '$last_media'";
 			$result = mysql_query($query);
 			if ($result) {
