@@ -14,6 +14,8 @@
 			$row = mysql_fetch_assoc($result);
 			$media_id = $row['media_fk'];
 			$next_media = $row['next_media_fk'];
+			$playlist_name = $row['playlist_name'];
+
 		}
 	}
 	else {
