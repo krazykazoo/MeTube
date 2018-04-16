@@ -2,7 +2,7 @@
 	include_once 'header.php';
 	include_once 'function.php';
 	if (isset($_GET['playlist_name']) &&
-		isset($_GET['media_id'])) {
+		isset($_GET['id'])) {
 		$name = $_POST['playlist_name'];
 		$media_id = $_POST['media_id'];
 		$getUserId = "SELECT * FROM Account WHERE username = '".$_SESSION['username']."'";
