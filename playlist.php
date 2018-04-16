@@ -70,15 +70,6 @@ Your browser does not support the video tag.
 		$content = $row['content'];
 		echo "<tr> <td style='width:20%'> $user </td> <td style=width:80%'> $content </td> </tr>";
 	}
-	
-else
-{
-?>
-	</table>
-<meta http-equiv="refresh" content="0;url=browse.php">
-<?php
-}
-?>
 <p> Post Comment </p>
 <table>
 	<tr>
