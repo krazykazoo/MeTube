@@ -71,6 +71,12 @@ else
 <?php
 }
 ?>
+<p> Add to playlist? </p>
+<form method="post" action="addPlaylist.php">
+	<input type="hidden" name="media_id" value="<?php echo $media_id;?>">
+	<span>Name of playlist: </span><input type="text" name="playlist_name">
+	<input type="submit" value="Add Video">
+</form>
 <p> Post Comment </p>
 <table>
 	<tr>
