@@ -31,7 +31,7 @@ function saveDownload(id)
 	}
 	else {
 		$username = $_SESSION['username'];
-		echo "Welcome to ".$username"\'s Channel";
+		echo "Welcome to ".$username."\'s Channel";
 		$query = "SELECT * from Media WHERE username = '$username'"; 
 	}
 		$result = mysql_query( $query );
