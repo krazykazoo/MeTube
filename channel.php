@@ -27,17 +27,18 @@ function saveDownload(id)
 <?php
 	if (isset($_GET['username'])) {
 		$username = $_GET['username'];
+		echo "Welcome to ".$username."\'s Channel";
 		$query = "SELECT * FROM Media WHERE username = '$username'";
 	}
 	else {
 		$username = $_SESSION['username'];
-		echo "Welcome to ".$username."\'s Channel";
+		echo "My Channel";
 		$query = "SELECT * from Media WHERE username = '$username'"; 
 	}
-		$result = mysql_query( $query );
-		if (!$result){
-	   		die ("Could not query the media table in the database: <br />". mysql_error());
-		}
+	$result = mysql_query( $query );
+	if (!$result){
+   		die ("Could not query the media table in the database: <br />". mysql_error());
+	}
 ?>
     
     <div> <?php if (isset($_GET['category'])) {echo "Browse " . $_GET['category'] . " videos:";} else {echo "Uploaded Media";}?> </div>
