@@ -46,6 +46,7 @@
 			echo "<li><a href='playlist.php'>My Playlist</a></li>";
 			echo "<li><a href='channel.php'>My Channel</a></li>";
 			echo "<li><a href='contacts.php'>My Contacts</a></li>";
+			echo "<li><a href='favorites.php'>Favorites</a></li>";
 			echo "<li><a href='logout.php'>Log Out</a></li>";
 			
 		}
