@@ -67,6 +67,10 @@ function saveDownload(id)
    				<span><em>Views: <?php echo $views; ?> </em></span>
 			</td>
 		</tr>
+		<form method="post" action="dropFavorite.php">
+			<input type="hidden" name="media_id" value="<?php echo $mediaid;?>">
+			<input type="submit" value="Remove">
+		</form>
         <?php
 			}
 		}
@@ -74,9 +78,6 @@ function saveDownload(id)
 	</table>
    </div>
    <p> Remove from Favorites? </p>
-<form method="post" action="dropFavorite.php">
-	<input type="hidden" name="media_id" value="<?php echo $media_id;?>">
-	<input type="submit" value="Remove">
-</form>
+
 </body>
 </html>
