@@ -32,7 +32,7 @@ function saveDownload(id)
 	$userId = $row['account_id'];
 
 
-	$query = "SELECT * FROM Favorites WHERE user_fk = '$userId'"
+	$query = "SELECT * FROM Favorites WHERE user_fk = '$userId'";
 	$result = mysql_query( $query );
 	if (!$result){
    		die ("Could not query the media table in the database: <br />". mysql_error());
