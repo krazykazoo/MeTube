@@ -45,8 +45,8 @@ function saveDownload(id)
 			while ($row = mysql_fetch_assoc($result)) {
 				$favorite = $row['media_fk'];
 				$query = "SELECT * FROM Media WHERE media_id = '$favorite'";
-				
-				while ($result_row = mysql_fetch_assoc($result)) //filename, username, type, mediaid, path
+				$favoriteResult = mysql_query($query);
+				while ($result_row = mysql_fetch_assoc($favoriteResult)) //filename, username, type, mediaid, path
 				{ 
 					$mediaid = $result_row['media_id'];
 					$filename = $result_row['name'];
