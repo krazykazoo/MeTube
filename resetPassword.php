@@ -5,7 +5,7 @@
 		isset($_POST['new_password1']) &&
 		isset($_POST['new_password2'])) {
 		
-		$getOldPassword = "SELECT * FROM Acoount WHERE username = '".$_SESSION."'";
+		$getOldPassword = "SELECT * FROM Acoount WHERE username = '".$_SESSION['username']."'";
 		$passwordResult = mysql_query($getOldPassword);
 		if (mysql_num_rows($passwordResult) > 0) {
 			$row = mysql_fetch_assoc($passwordResult);
