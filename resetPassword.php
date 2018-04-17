@@ -1,4 +1,6 @@
 <?php
+	include_once 'header.php';
+	include_once 'function.php';
 	if (isset($_POST['old_password']) &&
 		isset($_POST['new_password1']) &&
 		isset($_POST['new_password2'])) {
