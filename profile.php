@@ -19,5 +19,6 @@
 			<td><p>Confirm Password: </p></td>
 			<td><input type="password" name="new_password2"required></td>
 		</tr>
+		<tr><td><input type="submit" value="update"></td></tr>
 	</table>
 </form>
