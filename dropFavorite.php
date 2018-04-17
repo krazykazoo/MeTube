@@ -10,7 +10,7 @@
 		$query = "DELETE FROM Favorites WHERE user_fk = '$userId' AND media_fk = '$media_id'";
 		$result = mysql_query($query);
 		if ($result) {
-			header("Location: favorites.php");	
+			//header("Location: favorites.php");	
 		}
 	}
 	else {
