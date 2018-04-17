@@ -27,7 +27,7 @@ function saveDownload(id)
 <?php
 	if (isset($_GET['username'])) {
 		$username = $_GET['username'];
-		echo "Welcome to ".$username."\'s Channel";
+		echo "Welcome to ".$username."'s Channel";
 		$query = "SELECT * FROM Media WHERE username = '$username'";
 	}
 	else {
