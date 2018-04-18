@@ -5,6 +5,46 @@
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<style type="text/css">
+.buttonz {
+    background-color: #F66733; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+		margin: 1px;
+}
+
+.buttonz:hover {
+    background-color: #522D80;
+}
+
+.buttony {
+    background-color: #F66733; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+		height: 50px;
+		width: 300px;
+		margin: 5px;
+}
+
+.buttony:hover {
+    background-color: #522D80;
+}
+
+
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Media browse</title>
 <link rel="stylesheet" type="text/css" href="css/default.css" />
@@ -26,14 +66,14 @@ function saveDownload(id)
 <body>
 <div id="categories">
 	<span> Browse by Category: </span><br />
-	<a href="browse.php?category=entertainment"> Entertainment</a><br />
-	<a href="browse.php?category=kids"> Kids</a><br />
-	<a href="browse.php?category=educational"> Educational</a><br />
-	<a href="browse.php?category=Other"> Other </a><br />
+	<a href="browse.php?category=entertainment"><button class="buttonz" type="button">Entertainment</button></a><br />
+	<a href="browse.php?category=kids"><button class="buttonz" type="button">Kids</button></a><br />
+	<a href="browse.php?category=educational"><button class="buttonz" type="button">Educational</button></a><br />
+	<a href="browse.php?category=Other"><button class="buttonz" type="button">Other</button></a><br />
 </div>
 
 <p>Welcome <?php if (isset($_SESSION['username'])) echo $_SESSION['username'];?></p>
-<?php if (isset($_SESSION['username'])) echo "<a href='media_upload.php'  style='color:#FF9900;'>Upload File</a>"; ?>
+<?php if (isset($_SESSION['username'])) echo "<a href='media_upload.php'  style='color:#FF9900;'><button class='buttonz' type='button'>Upload File</button></a>"; ?>
 <div id='upload_result'>
 <?php
 	if(isset($_REQUEST['result']) && $_REQUEST['result']!=0)
@@ -117,10 +157,10 @@ function saveDownload(id)
 							<br />
 						</td>
             <td>
-	            <a href="media.php?id=<?php echo $mediaid;?>"><?php echo $title;?></a>
+	            <a href="media.php?id=<?php echo $mediaid;?>"><button class="buttony" type="button"><?php echo $title;?></button></a>
             </td>
             <td>
-	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
+	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);"><button class="buttony" type="button">Download</button></a>
             </td>
             <td>
    				<span><em>Views: <?php echo $views; ?> </em></span>

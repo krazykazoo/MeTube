@@ -13,6 +13,7 @@ include_once 'header.php';
 </head>
 
 <body>
+
 <?php
 if(isset($_GET['id'])) {
 	$query = "UPDATE Media SET views = views + 1 WHERE media_id = '".$_GET['id']."'";
@@ -28,6 +29,8 @@ if(isset($_GET['id'])) {
 	$filepath=$result_row['path'];
 	$type=$result_row['type'];
 	$media_id = $result_row['media_id'];
+	$views = $result_row['views'];
+	$uploader = $result_row['username'];
 	if(substr($type,0,5)=="image") //view image
 	{
 		echo "Viewing Picture: ";
@@ -71,25 +74,27 @@ else
 <?php
 }
 ?>
+<span><em>Views: <?php echo $views; ?> </em></span>
+<span>&nbsp;&nbsp;&nbsp;&nbsp; Uploaded By: <?php echo $uploader; ?></span>
 <p> Add to playlist? </p>
 <form method="post" action="addPlaylist.php">
 	<input type="hidden" name="media_id" value="<?php echo $media_id;?>">
 	<span>Name of playlist: </span><input type="text" name="playlist_name">
-	<input type="submit" value="Add Media">
+	<input type="submit" value="Add to Playlist">
 </form>
 <p> Add to Favorites? </p> <br />
 <form method="post" action="addFavorite.php">
 	<input type="hidden" name="media_id" value="<?php echo $media_id;?>">
-	<input type="submit" value="Add Media">
+	<input type="submit" value="Add to Favorites">
 </form>
-<p> Post Comment </p>
+<p> Comments </p>
 <table>
 	<tr>
 		<td>
 			<form method="post" action="comment.php">
 				<input type="hidden" name="media_id" value="<?php echo $media_id;?>">
 				<span>Message: </span><input type="text" name="message" required>
-				<input type="submit" value="Send"></button>
+				<input type="submit" value="Post Comment"></button>
 			</form>
 		</td>
 	</tr>

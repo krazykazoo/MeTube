@@ -1,11 +1,11 @@
-<?php 
+<?php
 	include_once 'header.php';
 	include_once 'function.php';
 	echo "My Account";
 ?>
 
 
-<form method="post" action="resetPassword.php"> 
+<form method="post" action="resetPassword.php">
 	<table>
 		<tr>
 			<td><p>Current Password: </p></td>
@@ -19,6 +19,6 @@
 			<td><p>Confirm Password: </p></td>
 			<td><input type="password" name="new_password2"required></td>
 		</tr>
-		<tr><td><input type="submit" value="update"></td></tr>
+		<tr><td><input type="submit" value="Update"></td></tr>
 	</table>
 </form>
