@@ -16,10 +16,10 @@ function saveDownload(id)
 	{
        id: id,
 	},
-	function(message) 
+	function(message)
     { }
  	);
-} 
+}
 </script>
 </head>
 
@@ -35,9 +35,9 @@ function saveDownload(id)
 <p>Welcome <?php if (isset($_SESSION['username'])) echo $_SESSION['username'];?></p>
 <?php if (isset($_SESSION['username'])) echo "<a href='media_upload.php'  style='color:#FF9900;'>Upload File</a>"; ?>
 <div id='upload_result'>
-<?php 
+<?php
 	if(isset($_REQUEST['result']) && $_REQUEST['result']!=0)
-	{		
+	{
 		echo upload_error($_REQUEST['result']);
 	}
 ?>
@@ -60,35 +60,64 @@ function saveDownload(id)
 		}
 	}
 	else {
-		$query = "SELECT * from Media"; 
+		$query = "SELECT * from Media";
 		$result = mysql_query( $query );
 		if (!$result){
 	   		die ("Could not query the media table in the database: <br />". mysql_error());
 		}
 	}
 ?>
-    
+
     <div> <?php if (isset($_GET['category'])) {echo "Browse " . $_GET['category'] . " videos:";} else {echo "Uploaded Media";}?> </div>
 	<table width="50%" cellpadding="0" cellspacing="0">
 		<?php
 			while ($result_row = mysql_fetch_assoc($result)) //filename, username, type, mediaid, path
-			{ 
+			{
 				$mediaid = $result_row['media_id'];
 				$filename = $result_row['name'];
 				$filenpath = $result_row['path'];
 				$user = $result_row['username'];
 				$title = $result_row['title'];
 				$views = $result_row['views'];
+				$type = $result_row['type'];
 
 		?>
-        	 <tr valign="top">			
+        	 <tr valign="top">
 			<td>
 					<?php
 						echo $user;  //mediaid
+						echo '&nbsp&nbsp&nbsp';
 					?>
 			</td>
+						<td>
+								<?php
+								if(substr($type,0,5)=="image") //view image
+								{
+									echo "Viewing Picture: ";
+									echo $title;
+									echo "<br /><br />";
+									echo '<a href=media.php?id='.$mediaid.'>';
+									echo '<img src="'.$filenpath.'" width="320" height="240" />';
+									echo '</a>';
+								}
+								else //view movie
+								{
+									echo "Viewing Video: ";
+									echo $title;
+									echo "<br />";
+									echo '<a href=media.php?id='.$mediaid.'>';
+									echo '<video width="320" height="240">';
+									echo '<source src="'.$filenpath.'" type="video/mp4">';
+									echo '<source src="'.$filenpath.'" type="video/ogg">';
+									echo "Your browser does not support the video tag.";
+									echo '</video>';
+									echo '</a>';
+								}
+							?>
+							<br />
+						</td>
             <td>
-	            <a href="media.php?id=<?php echo $mediaid;?>"><?php echo $title;?></a> 
+	            <a href="media.php?id=<?php echo $mediaid;?>"><?php echo $title;?></a>
             </td>
             <td>
 	            <a href="<?php echo $filenpath;?>" target="_blank" onclick="javascript:saveDownload(<?php echo $result_row[4];?>);">Download</a>
