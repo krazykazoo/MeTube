@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<?php 
+<?php
 
 	include_once 'header.php';
 	include_once 'function.php';
@@ -8,10 +8,10 @@
 	?>
 	<table style="width:100%">
 		<tr>
-			<td style="width:20%"> From </td>
+			<td style="width:20%"> Recieved From </td>
 			<td style="width:80%"> Message </td>
 		</tr>
-		<?php 
+		<?php
 			$getUserId = "SELECT * FROM Account WHERE username = '". $_SESSION['username'] . "'";
 			$userResult = mysql_query($getUserId);
 			$row = mysql_fetch_assoc($userResult);
@@ -23,8 +23,32 @@
 				$content = $row['content'];
 				echo "<tr> <td style='width:20%'> $sender </td> <td style=width:80%'> $content </td> </tr>";
 			}
-			
-		
+
+
+		?>
+	</table>
+	<br>
+	<table style="width:100%";>
+		<tr>
+			<td style="width:20%"> Sent To </td>
+			<td style="width:80%"> Message </td>
+		</tr>
+		<?php
+			$getrecMessages = "SELECT * FROM Message WHERE sender = '". $_SESSION['username'] ."'";
+			$recidResult = mysql_query($getrecMessages);
+			$row = mysql_fetch_assoc($recidResult);
+			$recidResult = mysql_query($getrecMessages);
+			while ($row = mysql_fetch_assoc($recidResult)) {
+				$receiverid = $row['to_fk'];
+				$content = $row['content'];
+				$getreceivername = "SELECT * FROM Account WHERE account_id = $receiverid";
+				$receiverresult = mysql_query($getreceivername);
+				$row = mysql_fetch_assoc($receiverresult);
+				$receivername = $row['username'];
+				echo "<tr> <td style='width:20%'> $receivername </td><td style='width:80%'> $content </td> </tr>";
+			}
+
+
 		?>
 	</table>
 	<?php
@@ -32,7 +56,7 @@
 		isset($_POST['message'])){
 		$recipient = $_POST['recipient'];
 		$message = $_POST['message'];
-		
+
 		$accountCheck = "SELECT account_id FROM Account WHERE username = '$recipient'";
 		$recipientResult = mysql_query($accountCheck);
 		if (!$recipientResult) {
@@ -53,7 +77,7 @@
 			unset($_POST['recipient']);
 			unset($_POST['message']);
 			header('Location: message.php');
-		}	
+		}
 	}
 ?>
 
