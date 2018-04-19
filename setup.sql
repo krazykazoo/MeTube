@@ -7,6 +7,20 @@ CREATE TABLE Account (
 	PRIMARY KEY (account_id)
 );
 
+CREATE TABLE Media (
+	media_id int(10) NOT NULL, 
+	name varchar(255),
+	username varchar(255),
+	type varchar(255),
+	path varchar(255),
+	last_access_time timestamp,
+	title varchar(255),
+	description varchar(255),
+	category varchar(255),
+	views int(10),
+	PRIMARY KEY (media_id)
+);
+
 CREATE TABLE Comment (
 	comment_id int(10) NOT NULL,  
 	media_fk int(10), 
@@ -32,20 +46,6 @@ CREATE TABLE Favorite (
 	PRIMARY KEY (favorite_id)
 	FOREIGN KEY (user_fk) REFERENCES Account(account_id), 
 	FOREIGN KEY (media_fk) REFERENCES Media(media_id)
-);
-
-CREATE TABLE Media (
-	media_id int(10) NOT NULL, 
-	name varchar(255),
-	username varchar(255),
-	type varchar(255),
-	path varchar(255),
-	last_access_time timestamp,
-	title varchar(255),
-	description varchar(255),
-	category varchar(255),
-	views int(10),
-	PRIMARY KEY (media_id)
 );
 
 CREATE TABLE Message (
