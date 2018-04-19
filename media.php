@@ -10,6 +10,25 @@ include_once 'header.php';
 <title>Media</title>
 <script src="Scripts/AC_ActiveX.js" type="text/javascript"></script>
 <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+<style type="text/css">
+.buttonz {
+    background-color: #F66733; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 200px;
+		margin: 1px;
+}
+
+.buttonz:hover {
+    background-color: #522D80;
+}
+</style>
 </head>
 
 <body>
@@ -31,12 +50,14 @@ if(isset($_GET['id'])) {
 	$media_id = $result_row['media_id'];
 	$views = $result_row['views'];
 	$uploader = $result_row['username'];
+	$description = $result_row['description'];
 	if(substr($type,0,5)=="image") //view image
 	{
 		echo "Viewing Picture: ";
 		echo $result_row['title'];
 		echo "<br />";
 		echo "<img src='".$filepath."'/>";
+		echo "<br />";
 	}
 	else //view movie
 	{
@@ -74,7 +95,8 @@ else
 <?php
 }
 ?>
-<span><em>Views: <?php echo $views; ?> </em></span>
+<span>Description: <?php echo $description; ?></span>
+<span><em>&nbsp;&nbsp;&nbsp;&nbsp; Views: <?php echo $views; ?> </em></span>
 <span>&nbsp;&nbsp;&nbsp;&nbsp; Uploaded By: <?php echo $uploader; ?></span>
 <p> Add to playlist? </p>
 <form method="post" action="addPlaylist.php">
@@ -85,7 +107,7 @@ else
 <p> Add to Favorites? </p> <br />
 <form method="post" action="addFavorite.php">
 	<input type="hidden" name="media_id" value="<?php echo $media_id;?>">
-	<input type="submit" value="Add to Favorites">
+	<input class="buttonz" type="submit" value="Add to Favorites">
 </form>
 <p> Comments </p>
 <table>

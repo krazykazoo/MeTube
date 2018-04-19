@@ -1,4 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+	<style type="text/css">
+	.buttonz {
+	    background-color: #F66733; /* Green */
+	    border: none;
+	    color: white;
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    cursor: pointer;
+	    width: 150px;
+			margin: 1px;
+	}
+
+	.buttonz:hover {
+	    background-color: #522D80;
+	}
+	</style>
+</head>
 <?php
 	include_once 'header.php';
 	include_once "function.php";
@@ -21,10 +42,10 @@
 				$userResult = mysql_query($getUserId);
 				$row = mysql_fetch_assoc($userResult);
 				$username = $row['username'];
-				echo "<tr><td>$username</td><td><a href='channel.php?username=$username'>Link</a></td></tr>";
+				echo "<tr><td>$username</td><td><a href='channel.php?username=$username'><button class='buttonz' type='button'>Link</button></a></td></tr>";
 			}
 		}
-		
+
 		?>
 	</table>
 

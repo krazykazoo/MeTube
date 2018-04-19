@@ -11,7 +11,7 @@
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    width: 150px;
+    width: 200px;
 		margin: 1px;
 }
 
@@ -63,12 +63,14 @@
 	$media_id = $result_row['media_id'];
 	$views = $result_row['views'];
 	$uploader = $result_row['username'];
+  $description = $result_row['description'];
 	if(substr($type,0,5)=="image") //view image
 	{
 		echo "Viewing Picture: ";
 		echo $result_row['title'];
 		echo "<br />";
 		echo "<img src='".$filepath."'/>";
+    echo "<br />";
 	}
 	else //view movie
 	{
@@ -81,21 +83,19 @@
 Your browser does not support the video tag.
 </video>
 <br />
-<span><em>Views: <?php echo $views; ?> </em></span>
-<span>&nbsp;&nbsp;&nbsp;&nbsp; Uploaded By: <?php echo $uploader; ?></span>
-<br />
+
 
 
 <?php } ?>
-
+<span>Description: <?php echo $description; ?></span>
+<span><em>&nbsp;&nbsp;&nbsp;&nbsp; Views: <?php echo $views; ?> </em></span>
+<span>&nbsp;&nbsp;&nbsp;&nbsp; Uploaded By: <?php echo $uploader; ?></span>
+<br />
  <?php if ($next_media != 0) { ?>
 <a href="playlist.php?id=<?php echo $next_media;?>"><button class="buttonz" type="button">Next</button></a>
 <?php
 	}
 	else {?>
-<br />
-<span><em>Views: <?php echo $views; ?> </em></span>
-<span>&nbsp;&nbsp;&nbsp;&nbsp; Uploaded By: <?php echo $uploader; ?></span>
 <br />
 <a href="playlist.php"><button class="buttonz" type="button">Beginning</button></a>
 <?php } ?>
@@ -118,6 +118,11 @@ Your browser does not support the video tag.
 	}
 ?>
 
+<p> Add to Favorites? </p> <br />
+<form method="post" action="addFavorite.php">
+	<input type="hidden" name="media_id" value="<?php echo $media_id;?>">
+	<input class="buttonz" type="submit" value="Add to Favorites">
+</form>
 
 
 <p> Post Comment </p>
