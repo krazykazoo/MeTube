@@ -1,15 +1,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<style type="text/css">
+	#messages {
+	    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	    border-collapse: collapse;
+	}
 
+	#messages td, #messages th {
+	    border: 1px solid #ddd;
+	    padding: 8px;
+	}
+
+	#messages tr:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+
+	#messages tr:hover {
+		background-color: #ddd;
+	}
+
+	#messages th {
+	    padding-top: 12px;
+	    padding-bottom: 12px;
+	    text-align: left;
+			padding-left: 12px;
+	    background-color: #F66733;
+	    color: white;
+	}
+</style>
+</head>
 <?php
 
 	include_once 'header.php';
 	include_once 'function.php';
 	echo "<p>My Messages</p>";
 	?>
-	<table style="width:100%">
+	<table id="messages" style="width:100%">
 		<tr>
-			<td style="width:20%"> Recieved From </td>
-			<td style="width:80%"> Message </td>
+			<th style="width:20%"> Recieved From </th>
+			<th style="width:80%"> Message </th>
 		</tr>
 		<?php
 			$getUserId = "SELECT * FROM Account WHERE username = '". $_SESSION['username'] . "'";
@@ -28,10 +57,10 @@
 		?>
 	</table>
 	<br>
-	<table style="width:100%";>
+	<table id="messages" style="width:100%";>
 		<tr>
-			<td style="width:20%"> Sent To </td>
-			<td style="width:80%"> Message </td>
+			<th style="width:20%"> Sent To </th>
+			<th style="width:80%"> Message </th>
 		</tr>
 		<?php
 			$getrecMessages = "SELECT * FROM Message WHERE sender = '". $_SESSION['username'] ."'";
