@@ -131,6 +131,7 @@ Your browser does not support the video tag.
 		<td>
 			<form method="post" action="comment.php">
 				<input type="hidden" name="media_id" value="<?php echo $media_id;?>">
+				<input type="hidden" name="playlist" value="true">
 				<span>Message: </span><input type="text" name="message" required>
 				<input type="submit" value="Post Comment"></button>
 			</form>

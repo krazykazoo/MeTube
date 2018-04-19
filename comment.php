@@ -9,7 +9,12 @@
 		$query = "INSERT INTO Comment (media_fk, username, content) VALUES ('$media_id', '$username', '$content')";
 		$result = mysql_query($query);
 		if ($result) {
-			header("Location: media.php?id=$media_id");	
+			if (isset($_POST['playlist'])) {
+				header("Location: playlist.php?id=$media_id");
+			}
+			else {
+				header("Location: media.php?id=$media_id");	
+			}
 		}
 	}
 	else {
